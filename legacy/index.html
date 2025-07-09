@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accede a los proyectos y lanzamientos más recientes">
+    <meta name="keywords" content="BitForge, Minecraft, proyectos, descargas, juegos">
+    <meta name="author" content="BitForge">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://raw.githubusercontent.com/BitForge2/BitForge2.github.io/refs/heads/main/imagen/minecraft_zerolag.avif" as="image">
+    
+    <!-- Preconexión para recursos externos -->
+    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    <link rel="preconnect" href="https://www.mediafire.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <title>BitForge | Proyectos y Descargas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Controles de tema e idioma -->
+    <div class="controls">
+        <button id="theme-toggle" class="control-btn" aria-label="Cambiar tema">
+            <i class="fas fa-moon"></i>
+        </button>
+        <select id="language-selector" class="control-btn" aria-label="Selector de idioma">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <!-- Encabezado principal -->
+    <header>
+        <div class="container">
+            <h1>BitForge</h1>
+            <p>Accede a mis proyectos y los lanzamientos más recientes</p>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#projects" class="nav-link">Mis Proyectos</a></li>
+                <li><a href="#social" class="nav-link">Redes Sociales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección de proyectos -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2>Explora nuestros proyectos</h2>
+
+            <!-- Controles de búsqueda y tags -->
+            <div class="project-controls">
+                <input type="text" id="search-input" class="search-box" placeholder="Buscar proyectos..." aria-label="Buscar proyectos">
+                <div id="tag-container" class="tag-container" role="list"></div>
+            </div>
+
+            <!-- Contenedor de proyectos -->
+            <div class="projects-grid" id="projects-container" role="list">
+                <!-- Proyectos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de redes sociales -->
+    <section class="section" id="social">
+        <div class="container">
+            <h2>Redes Sociales</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@BitForge10" class="social-btn youtube" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+                </a>
+                <a href="https://www.tiktok.com/@bitforge8" class="social-btn tiktok" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
+                </a>
+                <a href="https://github.com/BitForge2" class="social-btn github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para selección de servidores de descarga -->
+    <div id="download-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Cerrar modal">&times;</span>
+            <h3 id="modal-title">Selecciona servidor de descarga</h3>
+            <div class="download-options" id="download-options" role="list">
+                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón flotante para la película -->
+    <div class="movie-btn-container">
+        <button id="minecraft-movie-btn" class="movie-btn" aria-label="Ver película de Minecraft">
+            <i class="fas fa-film" aria-hidden="true"></i> Ver Película Minecraft
+        </button>
+    </div>
+
+    <!-- Modal para la película -->
+    <div id="movie-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="movie-modal-title">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Cerrar modal">&times;</span>
+            <h3 id="movie-modal-title">Una película de Minecraft</h3>
+            <div class="quality-options">
+                <a href="https://bitforge2.github.io/m3u8-player/player/#https://littletest-sorryplease.hf.space/omarcetesthd.m3u8" 
+                   class="quality-btn hd" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-high-definition" aria-hidden="true"></i> Ver en HD (720p)
+                </a>
+                <a href="https://bitforge2.github.io/m3u8-player/player/#https://littletest-sorryplease.hf.space/omarcetest.m3u8" 
+                   class="quality-btn sd" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-film" aria-hidden="true"></i> Ver en 360p
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>
