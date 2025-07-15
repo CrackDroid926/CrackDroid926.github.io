@@ -8,7 +8,7 @@ const CONFIG = {
 // Estado global
 const state = {
     language: CONFIG.DEFAULT_LANGUAGE,
-    darkMode: false,
+    darkMode: true,
     activeTag: null,
     searchQuery: '',
     isMenuOpen: false,
@@ -105,7 +105,61 @@ const projects = [
         image: "https://www.elpais.com.co/resizer/v2/X66BWPWC35DW7IEYCM47VIN3FY.jfif?auth=61ff02ebb7d764016afe66edf0eb45612eb477b14cdb1ea8264adcae026b1a03&smart=true&quality=75&width=1280&height=720",
         downloadLink: "https://www.mediafire.com/file/dg7u3gni0h8cbo2/CapCut.apk/file",
         tags: ["editor", "mobile"],
-        badge: ["cnxa"],
+		badges: ["cnxa"],
+        platform: "mobile"
+    },
+    {
+        id: 5,
+        title: {
+            en: "Spotify v9.0.64.840 (Premium)",
+            es: "Spotify v9.0.64.840 (Premium)",
+			pt: "Spotify v9.0.64.840 (Premium)"
+        },
+        description: {
+            en: "Spotify is one of the most popular music streaming platforms in the world. It offers nearly all music released by quality artists globally, with audio quality that few competitors can match. In addition, it provides an excellent user experience, helping it build a large fan base. For music lovers, it's an essential app on their smartphones.",
+            es: "Spotify es una de las plataformas musicales en línea más conocidas del mundo. Ofrece prácticamente toda la música lanzada por artistas de calidad de todo el mundo, con una calidad de audio superior a la de la mayoría de sus competidores. Además, brinda una excelente experiencia al usuario, lo que le ha permitido ganar una gran base de seguidores. Para los amantes de la música, es una aplicación esencial en sus smartphones.",
+            pt: "O Spotify é uma das plataformas musicais online mais famosas do mundo. Ela oferece praticamente toda a música lançada por artistas de qualidade ao redor do globo, com uma qualidade sonora superior à da maioria dos concorrentes. Além disso, proporciona uma excelente experiência ao usuário, o que lhe permite conquistar uma grande base de fãs. Para os apaixonados por música, é um aplicativo essencial nos seus smartphones."
+        },
+        image: "https://liteapks.com/wp-content/uploads/2022/04/spotify-music-and-podcasts-1.png",
+        downloadLink: "https://www.mediafire.com/file/e5c9crjmpu2f8ju/Spotify+v9.0.64.840+(Premium)+Fix.apk/file",
+        tags: ["mobile"],
+		badges: ["mobile"],
+        platform: "mobile"
+    },
+    {
+        id: 6,
+        title: {
+            en: "VPN Super v2.12.1 (Premium Unlocked)",
+            es: "VPN Super v2.12.1 (Premium Desbloqueado)",
+			pt: "VPN Super v2.12.1 (Premium Desbloqueado)"
+        },
+        description: {
+            en: "Browse without limits with full privacy and security. VPN Super allows you to access restricted content, protect your data, and bypass geo-blocks. With all premium features unlocked, enjoy fast connections, reliable servers, and no data limits.",
+            es: "Accede a contenido ilimitado de forma segura y anónima con VPN Super , una potente herramienta que te permite navegar sin restricciones, proteger tu privacidad y evitar firewalls o bloqueos geográficos. Con todas las funciones premium desbloqueadas, disfruta de servidores ultrarrápidos, conexión segura y sin límites de datos.",
+            pt: "Navegue sem limites com total privacidade e segurança. VPN Super permite que você acesse conteúdo restrito, proteja seus dados e contorne bloqueios geográficos. Com todos os recursos premium desbloqueados, aproveite conexões rápidas, servidores confiáveis e sem limites de dados."
+        },
+        image: "https://s3.amazonaws.com/www-itopvpn-com/blog/20240624/1719220195233170.jpg",
+        downloadLink: "https://www.mediafire.com/file/e6oes5guj05sfiw/VPN+Super+Unlimited+Proxy+v2.12.1+(Premium).apk/file",
+        tags: ["mobile", "VPN"],
+		badges: ["mobile"],
+        platform: "mobile"
+    },
+    {
+        id: 7,
+        title: {
+            en: "Mob Control v2.90.2",
+            es: "Mob Control v2.90.2",
+			pt: "Mob Control v2.90.2"
+        },
+        description: {
+            en: "The city is having a competition to see who can gather more individuals and win. Mob Control brings you new experiences, and here you are, the one who can gather many individuals to win. The official rebellion began, and whichever side was stronger and had more individuals won the final victory.",
+            es: "La ciudad está celebrando una competición para ver quién puede reunir a más individuos y ganar. Mob Control te trae nuevas experiencias, y aquí estás tú, el que puede reunir a muchos individuos para ganar. La rebelión oficial comenzó, y el bando que fuera más fuerte y tuviera más individuos ganó la victoria final.",
+            pt: "A cidade está a ter uma competição para ver quem consegue reunir mais indivíduos e ganhar. O Mob Control traz-te novas experiências, e aqui estás tu, aquele que consegue reunir muitos indivíduos para ganhar. A rebelião oficial começou, e o lado mais forte e com mais indivíduos ganhou a vitória final."
+        },
+        image: "https://liteapks.com/wp-content/uploads/2022/07/mob-control-mod.png",
+        downloadLink: "",
+        tags: ["mobile"],
+		badges: ["mobile"],
         platform: "mobile"
     }
 ];
@@ -172,13 +226,13 @@ const downloadServers = {
             name: "MediaFire",
             url: "https://www.mediafire.com/file/r53coajqssxrldl/Minecraft_v1.21.93.1.apk/file ",
             icon: "fas fa-cloud-download-alt",
-            description: "Servidor principal"
+            description: "Primary server"
         },
         {
             name: "Google Drive",
             url: "https://drive.google.com/file/d/1wGND7gK_8tdGBjKusRyE50XcjojMQTOs/view ",
             icon: "fas fa-download",
-            description: "Servidor secundario"
+            description: "Secondary server"
         }
     ],
 	"KineMaster Pro": [
@@ -186,16 +240,30 @@ const downloadServers = {
 			name: "MediaFire",
             url: "https://www.mediafire.com/file/z8xm54hwk0qqcqo/KineMaster-pro%252Bthe-thunder_16.apk.apk/file",
             icon: "fas fa-solid fa-download",
-            description: "Servidor principal"
+            description: "Primary server"
 			
 		},
 		{
             name: "Hugging Face",
             url: "https://littletest-sorryplease.hf.space/KineMaster-pro%2Bthe-thunder_16.apk.apk?download=true",
             icon: "fas fa-cloud-download",
-            description: "Servidor secundario"
+            description: "Secondary server"
         }
-	]
+	],
+    "Mob Control v2.90.2": [
+        {
+            name: "MediaFire",
+            url: "https://www.mediafire.com/file/wqoi6zjxlr9i2d2/Mob-Control-2.90.1-mod1.apk/file",
+            icon: "fas fa-solid fa-download",
+            description: "Mod 1: Coin Earn Multiplier, Premium Enabled"
+        },
+        {
+            name: "MediaFire",
+            url: "https://www.mediafire.com/file/0tfbvqs619som2s/Mob-Control-v2.90.1-mod2.apk/file",
+            icon: "fas fa-cloud-download",
+            description: "Mod 2: Unlimited Money"
+        }
+    ]
 };
 
 // Inicialización
